@@ -20,6 +20,7 @@
     UISearchController *searchBar = [[UISearchController alloc] initWithSearchResultsController:nil];
     self.navigationItem.searchController = searchBar;
     self.navigationItem.titleView = searchBar.searchBar;
+
     // Do any additional setup after loading the view.
 }
 - (void)viewWillDisappear:(BOOL)animated {
@@ -30,14 +31,18 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier  isEqual: @"Green View"]) {
+        segue.destinationViewController.title = @"Green Screen";
         segue.destinationViewController.view.backgroundColor = [UIColor greenColor];
     } else if ([segue.identifier  isEqual: @"Blue View"]) {
-           segue.destinationViewController.view.backgroundColor = [UIColor blueColor];
+        segue.destinationViewController.title = @"Blue Screen";
+        segue.destinationViewController.view.backgroundColor = [UIColor blueColor];
     } else
-        if ([segue.identifier  isEqual: @"SkyBlue View"]) {
+        if ([segue.identifier  isEqual: @"BlueSky View"]) {
+            segue.destinationViewController.title = @"BlueSky Screen";
             segue.destinationViewController.view.backgroundColor = [UIColor systemTealColor];
     } else
         if ([segue.identifier  isEqual: @"Red View"]) {
+                segue.destinationViewController.title = @"Red Screen";
             segue.destinationViewController.view.backgroundColor = [UIColor redColor];
     }
 

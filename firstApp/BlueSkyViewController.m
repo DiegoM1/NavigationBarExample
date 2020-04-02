@@ -16,7 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"BlueSky Screen";
     // Do any additional setup after loading the view.
 }
 
